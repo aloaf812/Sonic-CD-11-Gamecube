@@ -123,6 +123,7 @@ You can find the FAQ [here](./FAQ.md).
 * [Sappharad](https://github.com/Sappharad): for making a decompilation of the Windows Phone 7 version of Sonic CD (found [here](https://github.com/Sappharad/rvm_soniccd)) which gave me the idea & motivation to decompile the PC/iOS/Android versions.
 * [SuperSonic16](https://github.com/TheSuperSonic16): for creating & adding some stuff to the Sonic CD mod loader that I asked for.
 * [The Weigman](https://github.com/TheWeigman) for creating the header you see up here along with similar assets.
+* [ultra0000](https://github.com/ultra0000) for creating the Sonic CD Wii port (also found [here](https://github.com/ultra0000/RSDKv3-Decompilation)), which I used as a reference so I could figure out how to correctly set up the project.
 * Everyone in the [Retro Engine Modding Server](https://dc.railgun.works/retroengine) for being supportive of me and for giving me a place to show off these things that I've found.
 
 # Contact:

@@ -7,9 +7,11 @@ int videoWidth        = 0;
 int videoHeight       = 0;
 float videoAR         = 0;
 
+#if RETRO_PLATFORM != RETRO_GAMECUBE
 THEORAPLAY_Decoder *videoDecoder;
 const THEORAPLAY_VideoFrame *videoVidData;
 THEORAPLAY_Io callbacks;
+#endif
 
 byte videoSurface = 0;
 int videoFilePos  = 0;
@@ -19,6 +21,14 @@ int vidBaseticks  = 0;
 
 bool videoSkipped = false;
 
+#if RETRO_PLATFORM == RETRO_GAMECUBE
+void PlayVideoFile(char *filepath) {}
+void UpdateVideoFrame() {}
+int ProcessVideo() {}
+void StopVideoPlayback() {}
+void SetupVideoBuffer(int width, int height) {}
+void CloseVideoBuffer() {}
+#else
 static long videoRead(THEORAPLAY_Io *io, void *buf, long buflen)
 {
     FileIO *file    = (FileIO *)io->userdata;
@@ -356,3 +366,4 @@ void CloseVideoBuffer()
 #endif
     }
 }
+#endif

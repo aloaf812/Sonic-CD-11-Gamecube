@@ -137,7 +137,7 @@ typedef unsigned int uint;
 #endif
 
 #ifndef RETRO_USING_OPENGL
-#define RETRO_USING_OPENGL (1)
+#define RETRO_USING_OPENGL (0)
 #endif
 
 #if RETRO_USING_OPENGL
@@ -354,7 +354,9 @@ enum RetroBytecodeFormat {
 #endif
 #include <vorbis/vorbisfile.h>
 #include <theora/theora.h>
-#include <theoraplay.h>
+// the thing was causing compiler errors so it would be easier to comment it out
+
+//#include <theoraplay.h>
 #elif RETRO_PLATFORM == RETRO_OSX
 #include <SDL2/SDL.h>
 #include <Vorbis/vorbisfile.h>
@@ -378,7 +380,7 @@ enum RetroBytecodeFormat {
 #include <SDL2/SDL.h>
 #include <vorbis/vorbisfile.h>
 #include <theora/theora.h>
-#include <theoraplay.h>
+//#include <theoraplay.h>
 #endif
 
 #if RETRO_PLATFORM == RETRO_ANDROID
