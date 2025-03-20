@@ -2,7 +2,7 @@ name: Build RSDKv3
 on:
   push:
     branches:
-      - master
+      - gamecube
 
 jobs: 
   v3-gamecube:
