@@ -15,11 +15,10 @@ jobs:
           submodules: recursive
       - name: Build RSDKv3
         run: |
-          cd RSDKv3.Wii
+          cd RSDKv3.Gamecube
           make
           mkdir bin/ && mkdir bin/apps/ && mkdir bin/apps/RSDKv3/
           cp RSDKv3.Gamecube.dol bin/apps/RSDKv3/boot.dol
-          cp hbc-data/* bin/apps/RSDKv3/
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:

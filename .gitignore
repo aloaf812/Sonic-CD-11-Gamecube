@@ -298,5 +298,5 @@ build-dir
 
 # Gamecube
 gamecube_build/
-Sonic-CD-11-Gamecube.elf
-Sonic-CD-11-Gamecube.dol
+RSDKv3.Gamecube/Sonic-CD-11-Gamecube.elf
+RSDKv3.Gamecube/Sonic-CD-11-Gamecube.dol

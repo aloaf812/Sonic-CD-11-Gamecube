@@ -17,9 +17,9 @@ include $(DEVKITPPC)/gamecube_rules
 #---------------------------------------------------------------------------------
 TARGET		:=	$(notdir $(CURDIR))
 BUILD		:=	gamecube_build
-SOURCES		:=	RSDKv3 dependencies/all/tinyxml2/
+SOURCES		:=	../RSDKv3 ../dependencies/all/tinyxml2/
 DATA		:=	data
-INCLUDES	:=	dependencies/all/tinyxml2/
+INCLUDES	:=	../dependencies/all/tinyxml2/
 
 #---------------------------------------------------------------------------------
 # options for code generation
@@ -98,7 +98,7 @@ export OUTPUT	:=	$(CURDIR)/$(TARGET)
 #---------------------------------------------------------------------------------
 $(BUILD):
 	@[ -d $@ ] || mkdir -p $@
-	@$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Gamecube.mk
+	@$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile
 
 #---------------------------------------------------------------------------------
 clean:
