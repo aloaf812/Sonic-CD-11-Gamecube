@@ -217,7 +217,6 @@ typedef unsigned int uint;
 #elif RETRO_PLATFORM == RETRO_GAMECUBE
 #define RETRO_GAMEPLATFORMID (RETRO_STANDARD)
 #else
-#else
 #error Unspecified RETRO_GAMEPLATFORMID
 #endif
 
@@ -386,10 +385,10 @@ enum RetroBytecodeFormat {
 #include <theora/theora.h>
 #include <theoraplay.h>
 #elif RETRO_PLATFORM == RETRO_GAMECUBE
-#include <SDL2/SDL.h>
+#include <SDL.h>
 #include <vorbis/vorbisfile.h>
 #include <theora/theora.h>
-//#include <theoraplay.h>
+//#include "theoraplay.h"
 #endif
 
 #if RETRO_PLATFORM == RETRO_ANDROID
