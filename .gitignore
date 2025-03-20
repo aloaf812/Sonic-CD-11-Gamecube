@@ -295,3 +295,8 @@ android/local.properties
 .flatpak-builder
 flatpak/*.apk
 build-dir
+
+# Gamecube
+gamecube_build/
+Sonic-CD-11-Gamecube.elf
+Sonic-CD-11-Gamecube.dol
