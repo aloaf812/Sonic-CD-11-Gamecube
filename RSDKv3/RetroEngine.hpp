@@ -49,7 +49,7 @@ typedef unsigned int uint;
 #define RETRO_VITA (7)
 #define RETRO_UWP  (8)
 #define RETRO_LINUX (9)
-#define RETRO_GAMECUBE  (9)
+#define RETRO_GAMECUBE  (10)
 
 // Platform types (Game manages platform-specific code such as HUD position using this rather than the above)
 #define RETRO_STANDARD (0)
@@ -100,6 +100,10 @@ typedef unsigned int uint;
 #define BASE_PATH            ""
 #define DEFAULT_SCREEN_XSIZE 424
 #define DEFAULT_FULLSCREEN   false
+#elif RETRO_PLATFORM == RETRO_GAMECUBE
+#define BASE_PATH            "/SonicCD/"
+#define DEFAULT_SCREEN_XSIZE 424
+#define DEFAULT_FULLSCREEN   true
 #else
 #ifndef BASE_PATH
 #define BASE_PATH            ""
@@ -136,8 +140,12 @@ typedef unsigned int uint;
 #define RETRO_GAMEPLATFORM (RETRO_STANDARD)
 #endif
 
-#ifndef RETRO_USING_OPENGL
+#if RETRO_PLATFORM == RETRO_GAMECUBE
 #define RETRO_USING_OPENGL (0)
+#endif
+
+#ifndef RETRO_USING_OPENGL
+#define RETRO_USING_OPENGL (1)
 #endif
 
 #if RETRO_USING_OPENGL
@@ -202,12 +210,13 @@ typedef unsigned int uint;
 // use *this* macro to determine what platform the game thinks its running on (since only the first 7 platforms are supported natively by scripts)
 #if RETRO_PLATFORM == RETRO_VITA
 #define RETRO_GAMEPLATFORMID (RETRO_WIN)
-#elif RETRO_PLATFORM == RETRO_GAMECUBE
-#define RETRO_GAMEPLATFORMID (RETRO_WIN)
 #elif RETRO_PLATFORM == RETRO_UWP
 #define RETRO_GAMEPLATFORMID (UAP_GetRetroGamePlatformId())
 #elif RETRO_PLATFORM == RETRO_LINUX
 #define RETRO_GAMEPLATFORMID (RETRO_STANDARD)
+#elif RETRO_PLATFORM == RETRO_GAMECUBE
+#define RETRO_GAMEPLATFORMID (RETRO_STANDARD)
+#else
 #else
 #error Unspecified RETRO_GAMEPLATFORMID
 #endif
